@@ -10,7 +10,7 @@
  * Module exports
  */
 
-module.exports = history-screengrabber;
+module.exports = history_screengrabber;
 
 /**
  * @param {}
@@ -18,5 +18,5 @@ module.exports = history-screengrabber;
  * @api public
  */
 
-function history-screengrabber() {
+function history_screengrabber() {
 }

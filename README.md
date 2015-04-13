@@ -14,7 +14,7 @@ npm install --save history-screengrabber
 
 ## API
 
-### history-screengrabber()
+### history_screengrabber()
 
 
 ## Testing

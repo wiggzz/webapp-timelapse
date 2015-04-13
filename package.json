@@ -5,7 +5,8 @@
   "main": "history-screengrabber.js",
   "devDependencies": {
     "chai": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "nodegit": "^0.3.3"
   },
   "scripts": {
     "test": "mocha --no-colors --reporter spec"
