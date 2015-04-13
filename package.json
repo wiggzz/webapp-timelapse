@@ -1,0 +1,13 @@
+{
+  "name": "history-screengrabber",
+  "description": "",
+  "version": "0.0.0",
+  "main": "history-screengrabber.js",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha --no-colors --reporter spec"
+  }
+}
