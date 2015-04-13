@@ -5,6 +5,7 @@
   "main": "history-screengrabber.js",
   "devDependencies": {
     "chai": "*",
+    "minimist": "^1.1.1",
     "mocha": "*",
     "nodegit": "^0.3.3"
   },
