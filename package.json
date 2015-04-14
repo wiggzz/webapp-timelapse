@@ -10,6 +10,7 @@
     "nodegit": "^0.3.3",
     "nodegit-promise": "^1.0.0",
     "protractor": "^2.0.0",
+    "rwlock": "^5.0.0",
     "webdriver-manager": "^3.0.0"
   },
   "scripts": {
