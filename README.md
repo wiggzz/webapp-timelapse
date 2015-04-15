@@ -1,8 +1,5 @@
 # webapp-timelapse
 
-[![Build Status](https://secure.travis-ci.org/wiggzz/webapp-timelapse.png?branch=master)](http://travis-ci.org/wiggzz/webapp-timelapse)
-
-
 ## Installation
 
 Clone from github, npm install:
@@ -41,7 +38,3 @@ Other options:
 ```
 
 I also want to implement a way to run different commands depending on the SHA of the commit.
-
-## Testing
-
-No tests yet :(
