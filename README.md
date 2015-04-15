@@ -17,7 +17,7 @@ npm install
 On a local repo, start whatever server is needed, and then run:
 
 ```
-node bin/run --local PATH_TO_LOCAL_REPO [--max NUMBER_OF_COMMITS] [--baseUrl SERVER_URL]
+node bin/run --local PATH_TO_LOCAL_REPO --baseUrl SERVER_URL
 ```
 
 webapp-timelapse will walk through at most NUMBER_OF_COMMITS commits backwards in time, making a request to --baseUrl with a protractor instance.  It will take a screenshot of the resulting website after waiting for angular to load.
