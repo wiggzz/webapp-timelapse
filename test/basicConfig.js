@@ -9,8 +9,8 @@ timelapse.clone('file://'+path.join(__dirname,'../font-dragr'))
   console.log('Repository cloned');
 
   return repo.select()
-    //.from(timelapse.commitMatcher('a9866e6084'))
-    //.to(timelapse.commitMatcher('4991f9761c'))
+    .from('a9866e6084')
+    .to('4991f9761c')
     .beforeAll(function (checkout) {
       console.log('This runs before all the commit actions.');
     }).afterAll(function(checkout) {
