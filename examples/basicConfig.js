@@ -43,7 +43,6 @@ timelapse.promise.all([
     .to('4991f9761c')
     .forEach(function(commit) {
       return installAndStartServer(repo).then(function(child) {
-        console.log('saving screenshot');
         return timelapse.saveScreenshot(browser, commit)
           .then(function () {
             return teardownServer(repo, child);
