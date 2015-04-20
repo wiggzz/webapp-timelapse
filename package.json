@@ -10,13 +10,13 @@
     "mocha": "*",
     "nodegit": "^0.3.3",
     "nodegit-promise": "^1.0.0",
-    "protractor": "^2.0.0",
+    "protractor": "git://github.com/wiggzz/protractor",
     "rimraf": "^2.3.2",
     "rwlock": "^5.0.0",
     "sha1": "^1.1.0",
     "webdriver-manager": "^3.0.0"
   },
   "scripts": {
-    "test": "mocha --no-colors --reporter spec"
+    "test": "mocha --reporter spec"
   }
 }
