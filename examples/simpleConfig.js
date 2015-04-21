@@ -41,10 +41,9 @@ repo.select()
     });
   }).apply()
 
-.then(function() {
-  repo.cleanup();
-  browser.shutdown();
-})
+.then(repo.cleanup)
+
+.then(browser.shutdown)
 
 .then(function() {
   process.exit(0);

@@ -3,7 +3,6 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 var syncWrapper = require('../lib/syncWrapper');
-var promiseChain = require('../lib/promiseChain');
 
 describe('sychronous wrapper experiment', function() {
   it('should make sure that functions are called in sequence', function() {
