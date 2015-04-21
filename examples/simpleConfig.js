@@ -43,8 +43,4 @@ repo.select()
 
 .then(repo.cleanup)
 
-.then(browser.shutdown)
-
-.then(function() {
-  process.exit(0);
-});
+.then(browser.shutdown);
