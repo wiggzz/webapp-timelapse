@@ -10,6 +10,12 @@ cd webapp-timelapse
 npm install
 ```
 
+To run the tests/examples run:
+
+```
+npm test
+```
+
 ## Usage
 
 Take a look at the example configuration in `examples/font-dragr.js`.
