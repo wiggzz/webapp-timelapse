@@ -17,7 +17,7 @@ Take a look at the example configuration in `examples/font-dragr.js`.
 To run it, install as above, and then run
 
 ```
-node examples/simpleConfig.js
+node examples/font-dragr.js
 ```
 
 The simple example clones https://github.com/ryanseddon/font-dragr into a temporary directory and starts a protractor browser session for taking screenshots.  Then it checks out each commit between one with a SHA starting with `0134fb69cf...` and one with a SHA starting with `2d2d3f26e6...`, and then runs any assigned tasks.
