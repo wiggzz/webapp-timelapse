@@ -12,7 +12,7 @@ npm install
 
 ## Usage
 
-Take a look at the example configuration in `examples/simpleConfig.js`.
+Take a look at the example configuration in `examples/font-dragr.js`.
 
 To run it, install as above, and then run
 

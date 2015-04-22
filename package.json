@@ -17,7 +17,7 @@
     "webdriver-manager": "^3.0.0"
   },
   "scripts": {
-    "test-examples": "node examples/simpleConfig.js",
+    "test-examples": "node examples/font-dragr.js",
     "test": "mocha --reporter spec && npm run test-examples"
   }
 }

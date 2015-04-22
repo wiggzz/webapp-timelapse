@@ -9,7 +9,7 @@ var browserOptions = {
 };
 
 var repositoryUrl = 'https://github.com/ryanseddon/font-dragr';
-//var repositoryUrl = 'file://'+path.join(__dirname,'../font-dragr');
+//var repositoryUrl = 'file://'+path.join(__dirname,'../font-dragr'); // we can also clone local repos
 
 function installAndStartServer(ctx) {
   ctx.exec('sed -i.bak "s/\\"grunt-bower-hooks\\": \\"~0.2.0\\"/\\"grunt-bower-requirejs\\": \\"~0.4.0\\"/" package.json');
