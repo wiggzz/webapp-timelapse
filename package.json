@@ -9,7 +9,7 @@
     "chai-as-promised": "^5.0.0",
     "minimist": "^1.1.1",
     "mocha": "*",
-    "nodegit": "^3.3.0",
+    "nodegit": "^0.3.3",
     "protractor": "wiggzz/protractor",
     "rimraf": "^2.3.2",
     "rwlock": "^5.0.0",
