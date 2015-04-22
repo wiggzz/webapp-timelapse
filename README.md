@@ -13,7 +13,7 @@ npm install
 
 Take a look at the example configuration in `examples/simpleConfig.js`.
 
-The simple example clones the `font-dragr` into a temporary directory and starts a protractor browser session for taking screenshots.  Then it checks out each commit between one with a SHA starting with `0134fb69cf...` and one with a SHA starting with `2d2d3f26e6...`, and then runs any assigned tasks.
+The simple example clones https://github.com/ryanseddon/font-dragr into a temporary directory and starts a protractor browser session for taking screenshots.  Then it checks out each commit between one with a SHA starting with `0134fb69cf...` and one with a SHA starting with `2d2d3f26e6...`, and then runs any assigned tasks.
 
 `repo.select()` returns a selection object that provides some convenience functions for selecting commit ranges.  The `.from()` function allows one to specify where to start a selection with a string that matches the beginning of the commit SHA, `.end()` specifies the ending commit.
 
