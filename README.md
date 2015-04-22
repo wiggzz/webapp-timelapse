@@ -6,12 +6,19 @@ Clone from github, npm install:
 
 ```
 git clone https://github.com/wiggzz/webapp-timelapse
+cd webapp-timelapse
 npm install
 ```
 
 ## Usage
 
 Take a look at the example configuration in `examples/simpleConfig.js`.
+
+To run it, install as above, and then run
+
+```
+node examples/simpleConfig.js
+```
 
 The simple example clones https://github.com/ryanseddon/font-dragr into a temporary directory and starts a protractor browser session for taking screenshots.  Then it checks out each commit between one with a SHA starting with `0134fb69cf...` and one with a SHA starting with `2d2d3f26e6...`, and then runs any assigned tasks.
 
