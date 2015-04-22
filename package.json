@@ -15,8 +15,7 @@
     "rimraf": "^2.3.2",
     "rwlock": "^5.0.0",
     "sha1": "^1.1.0",
-    "webdriver-manager": "^3.0.0",
-    "minimist": "^1.1.1"
+    "webdriver-manager": "^3.0.0"
   },
   "scripts": {
     "test-examples": "node examples/font-dragr.js",
