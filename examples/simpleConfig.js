@@ -7,7 +7,8 @@ var browserOptions = {
   baseUrl: 'http://localhost:9000'
 };
 
-var repositoryUrl = 'file://'+path.join(__dirname,'../font-dragr');
+var repositoryUrl = 'https://github.com/ryanseddon/font-dragr';
+//var repositoryUrl = 'file://'+path.join(__dirname,'../font-dragr');
 
 function installAndStartServer(ctx) {
   ctx.exec('sed -i.bak "s/\\"grunt-bower-hooks\\": \\"~0.2.0\\"/\\"grunt-bower-requirejs\\": \\"~0.4.0\\"/" package.json');
@@ -23,17 +24,26 @@ function teardownServer(ctx, child) {
   ctx.exec('npm uninstall');
 }
 
+function screenshotPath(commit) {
+  return path.join('./screenshots', commit.date().getTime().toString() + commit.sha().slice(0,10) + '.png');
+}
+
 var browser = timelapse.browser(browserOptions);
 var repo = timelapse.clone(repositoryUrl);
 
 repo.select()
-  .from('a9866e6084')
-  .to('4991f9761c')
+  .from('0134fb69cf')
+  .to('2d2d3f26e6')
   .forEach(function(commit) {
     return repo.context(function(ctx) {
       var child = installAndStartServer(ctx);
 
-      ctx.saveScreenshot(browser, commit);
+      ctx.call(function() {
+        // use context.call() in order to get it to execute after
+        // the previous contextual statements... these are all wrapped
+        // async calls.
+        return browser.saveScreenshot('/',screenshotPath(commit));
+      });
 
       teardownServer(ctx, child);
 
@@ -43,4 +53,12 @@ repo.select()
 
 .then(repo.cleanup)
 
-.then(browser.shutdown);
+.then(browser.shutdown)
+
+.then(function() {
+  console.log('Done');
+  process.exit(0); // workaround until nodegit PR #546 appears on npm
+}, function(err) {
+  console.log('Uncaught error: ' + err);
+  process.exit(1);
+});

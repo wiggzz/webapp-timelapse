@@ -34,6 +34,16 @@ describe('sychronous wrapper experiment', function() {
       expect(two).to.eventually.equal(2)]);
   });
 
+  it('should provide a call callback to call an arbitrary function on the chain', function() {
+    var wrappedObject = syncWrapper({});
+
+    var response = wrappedObject.call(function() {
+      return 1;
+    });
+
+    return expect(response).to.eventually.equal(1);
+  })
+
   it('should provide a whenDone function to return a promise that resolves then the chain is done', function() {
     var testObj = {
       func: function() {

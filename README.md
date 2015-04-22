@@ -9,32 +9,16 @@ git clone https://github.com/wiggzz/webapp-timelapse
 npm install
 ```
 
-## Running
+## Usage
 
-On a local repo, start whatever server is needed, and then run:
+Take a look at the example configuration in `examples/simpleConfig.js`.
 
-```
-node bin/run --local PATH_TO_LOCAL_REPO --baseUrl SERVER_URL
-```
+The simple example clones the `font-dragr` and starts a protractor browser session for taking screenshots.  Then it checks out each commit between one with a SHA starting with `0134fb69cf...` and one with a SHA starting with `2d2d3f26e6...`.  Inside `repo.select().apply()` for each commit `timelapse` will:
 
-webapp-timelapse will walk through at most NUMBER_OF_COMMITS commits backwards in time, making a request to --baseUrl with a protractor instance.  It will take a screenshot of the resulting website after waiting for angular to load.
+1. lock the directory
+2. checks out the commit
+3. run the callback for each active selection
 
-Other options:
+It is possible to assign actions to be executed at the beginning of a group of commits by using `.beforeAll()`, or assign actions to be executed at the end of a group of commits by using `.afterAll()`.
 
-```
---local LOCAL_REPOSITORY   Location of the local repository to work on...working
-                           directory for remote repos
---max NUMBER_OF_COMMITS    Number of commits to walk through
---baseUrl SERVER_URL       Url to request when running protractor
---protractorConfig PATH_TO_PROTRACTOR_CONFIG    Specifies an optional protractor
-                                                configuration to use.
---start START_COMMAND      A command run every time a commit is checked out, to
-                           prepare the repository
---finish FINISH_COMMAND    [Not implemented yet... ] A command run after
-                           attempting to snapshot a commit. Should run every
-                           time
---url REMOTE_REPOSITORY    A remote repository to pull down into the --local
-                           directory
-```
-
-I also want to implement a way to run different commands depending on the SHA of the commit.
+The callback uses the `timelapseRepository.context()` function to obtain an execution context that will execute commands in the working directory of the repository.  Additionally, it will make sure that the commands are executed in sequence.  Use the `repositoryContext.call()` function to execute arbitrary functions in sequence with other commands.
