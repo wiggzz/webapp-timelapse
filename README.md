@@ -10,7 +10,7 @@ cd webapp-timelapse
 npm install
 ```
 
-To run the tests/examples run:
+To run the tests/examples run, start a selenium server, check that the default configuration is correct in lib/protractorDefaults.conf.js and then run:
 
 ```
 npm test
