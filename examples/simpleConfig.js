@@ -2,6 +2,7 @@
 
 var timelapse = require('../lib/timelapse');
 var path = require('path');
+var fs = require('fs');
 
 var browserOptions = {
   baseUrl: 'http://localhost:9000'
@@ -24,8 +25,14 @@ function teardownServer(ctx, child) {
   ctx.exec('npm uninstall');
 }
 
+var screenshotDir = './screenshots';
+
+fs.mkdir(screenshotDir, function(err) {
+  if (err && err.code != 'EEXIST') throw err;
+});
+
 function screenshotPath(commit) {
-  return path.join('./screenshots', commit.date().getTime().toString() + commit.sha().slice(0,10) + '.png');
+  return path.join(screenshotDir, commit.date().getTime().toString() + commit.sha().slice(0,10) + '.png');
 }
 
 var browser = timelapse.browser(browserOptions);

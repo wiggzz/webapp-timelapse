@@ -59,3 +59,5 @@ var selection = repo.select()
       // runs for after efghij...
     }).apply()
 ```
+
+If available `commit` will be provided to the callbacks.  Each callback in `.forEach()`, `.afterAll()`, or `.beforeAll()` can return a promise which when resolved signals the completion of the actions.  Actions will be called in the order that they are added to the selection.
