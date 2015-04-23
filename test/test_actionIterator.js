@@ -46,4 +46,32 @@ describe('action iterator', function() {
       expect(calls).to.equal(1);
     });
   });
+
+  it('should catch errors, but complete all the actions and throw errors at the end', function() {
+    var iterable = mockIterable([1, 2]);
+
+    var calls = 0;
+
+    var errorStr = 'error 1';
+
+    var actionMap = {
+      1: function() {
+        throw new Error(errorStr);
+      },
+      2: function() {
+        calls++;
+      }
+    };
+
+    var actionProvider = mockActionProvider(actionMap);
+
+    var iterator = actionIterator(iterable, actionProvider);
+
+    return iterator.start().then(function() {
+      throw new Error('error was not raised');
+    }, function(err) {
+      expect(err.length).to.equal(1);
+      expect(err[0].message).to.equal(errorStr);
+    });
+  });
 })

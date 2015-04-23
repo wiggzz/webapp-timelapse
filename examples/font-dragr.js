@@ -45,12 +45,14 @@ function screenshotPath(commit) {
 var browser = timelapse.browser(browserOptions);
 var repo = timelapse.clone(repositoryUrl);
 
-repo.context(function(ctx) {
-  installDependencies(ctx);
-  return ctx.whenDone();
-})
 
-.then(repo.select()
+repo.select()
+  .beforeAll(function() {
+    return repo.context(function(ctx) {
+      installDependencies(ctx);
+      return ctx.whenDone();
+    })
+  })
   .from('0134fb69cf')
   .to('2d2d3f26e6')
   .forEach(function(commit) {
@@ -68,7 +70,7 @@ repo.context(function(ctx) {
 
       return ctx.whenDone();
     });
-  }).apply)
+  }).apply()
 
 .then(repo.cleanup)
 
