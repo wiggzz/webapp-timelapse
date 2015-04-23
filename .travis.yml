@@ -1,5 +1,4 @@
 language: node_js
-sudo: false
 node_js:
   - "stable"
   - "iojs"
@@ -9,9 +8,13 @@ cache:
     - node_modules
 before_install:
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
-      add-apt-repository -y ppa:ubuntu-toolchain-r/test;
-      apt-get update;
-      apt-get install gcc-4.9 g++-4.9;
+      sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
+      sudo apt-get update;
+      sudo apt-get install gcc-4.9 g++-4.9 lcov;
+      sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20;
+      sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20;
+      sudo update-alternatives --config gcc;
+      sudo update-alternatives --config g++;
     fi
   - BUILD_ONLY=true npm install nodegit
   - "export DISPLAY=:99.0"
