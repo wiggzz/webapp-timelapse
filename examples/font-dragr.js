@@ -11,12 +11,17 @@ var browserOptions = {
 var repositoryUrl = 'https://github.com/ryanseddon/font-dragr';
 //var repositoryUrl = 'file://'+path.join(__dirname,'../font-dragr'); // we can also clone local repos
 
+function installDependencies(ctx) {
+  ctx.exec('npm install grunt-cli');
+  return ctx;
+}
+
 function installAndStartServer(ctx) {
   ctx.exec('sed -i.bak "s/\\"grunt-bower-hooks\\": \\"~0.2.0\\"/\\"grunt-bower-requirejs\\": \\"~0.4.0\\"/" package.json');
   ctx.exec('npm install');
   ctx.exec('bower install --dev');
   var child = ctx.spawn('grunt server');
-  ctx.wait(2000);
+  ctx.wait(4000);
   return child;
 }
 
@@ -37,6 +42,11 @@ function screenshotPath(commit) {
 
 var browser = timelapse.browser(browserOptions);
 var repo = timelapse.clone(repositoryUrl);
+
+repo.context(function(ctx) {
+  installDependencies(ctx);
+  return ctx.whenDone();
+});
 
 repo.select()
   .from('0134fb69cf')
