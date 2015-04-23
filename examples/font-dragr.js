@@ -21,7 +21,8 @@ function installAndStartServer(ctx) {
   ctx.exec('npm install');
   ctx.exec('bower install --dev');
   var child = ctx.spawn('grunt server');
-  ctx.wait(4000);
+  ctx.wait(5000);
+  ctx.exec('curl http://localhost:9000');
   return child;
 }
 
