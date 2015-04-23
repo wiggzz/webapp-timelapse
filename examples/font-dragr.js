@@ -18,7 +18,7 @@ function installDependencies(ctx) {
 }
 
 function installAndStartServer(ctx) {
-  ctx.exec('sed -i.bak "s/\\"grunt-bower-hooks\\": \\"~0.2.0\\"/\\"grunt-bower-requirejs\\": \\"~0.4.0\\"/" package.json');
+  ctx.exec('sed -i.bak "s/\\"grunt-bower-hooks\\": \\"~0.2.0\\"/\\"grunt-bower-requirejs\\": \\"~0.8.0\\"/" package.json');
   ctx.exec('npm install');
   ctx.exec('bower install --dev');
   var child = ctx.spawn('grunt server');
@@ -48,9 +48,9 @@ var repo = timelapse.clone(repositoryUrl);
 repo.context(function(ctx) {
   installDependencies(ctx);
   return ctx.whenDone();
-});
+})
 
-repo.select()
+.then(repo.select()
   .from('0134fb69cf')
   .to('2d2d3f26e6')
   .forEach(function(commit) {
@@ -68,7 +68,7 @@ repo.select()
 
       return ctx.whenDone();
     });
-  }).apply()
+  }).apply)
 
 .then(repo.cleanup)
 
