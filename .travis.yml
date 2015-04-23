@@ -4,6 +4,6 @@ node_js:
   - "iojs"
 before_install:
   - sudo apt-get update
-  - sudo apt-get upgrade gcc
+  - sudo apt-get install gcc
   - sudo apt-get install build-essential
   - BUILD_ONLY=true npm install nodegit
