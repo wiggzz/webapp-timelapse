@@ -13,6 +13,7 @@ var repositoryUrl = 'https://github.com/ryanseddon/font-dragr';
 
 function installDependencies(ctx) {
   ctx.exec('npm install grunt-cli');
+  ctx.exec('npm install bower');
   return ctx;
 }
 
@@ -21,7 +22,7 @@ function installAndStartServer(ctx) {
   ctx.exec('npm install');
   ctx.exec('bower install --dev');
   var child = ctx.spawn('grunt server');
-  ctx.wait(5000);
+  ctx.wait(8000);
   ctx.exec('curl http://localhost:9000');
   return child;
 }
