@@ -10,11 +10,15 @@ cd webapp-timelapse
 npm install
 ```
 
-To run the tests/examples run, start a selenium server, check that the default configuration is correct in lib/protractorDefaults.conf.js and then run:
+To run the tests/examples, check that the default configuration is correct in lib/protractorDefaults.conf.js and then run:
 
 ```
 npm test
 ```
+
+The default configuration uses the firefox driver, if you would like to use chrome or some other protractor setup, modify the protractor configuration.
+
+You can specify your own protractor configuration file by specifying the `configFile` key in the browser options passed to `browser()`.
 
 ## Usage
 

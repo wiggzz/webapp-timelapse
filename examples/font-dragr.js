@@ -5,7 +5,8 @@ var path = require('path');
 var fs = require('fs');
 
 var browserOptions = {
-  baseUrl: 'http://localhost:9000'
+  baseUrl: 'http://localhost:9000',
+  //configFile: 'protractor.conf.js' // specify a protractor configuration file
 };
 
 var repositoryUrl = 'https://github.com/ryanseddon/font-dragr';
