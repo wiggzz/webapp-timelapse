@@ -10,7 +10,7 @@
     "mocha": "*"
   },
   "dependencies": {
-    "nodegit": "wiggzz/nodegit",
+    "nodegit": "^0.3.3",
     "protractor": "wiggzz/protractor",
     "rimraf": "^2.3.2",
     "rwlock": "^5.0.0",
