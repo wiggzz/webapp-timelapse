@@ -12,6 +12,6 @@ before_install:
       sudo update-alternatives --config gcc;
       sudo update-alternatives --config g++;
     fi
-  - npm install nodegit
+  - BUILD_ONLY=true npm install nodegit
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
