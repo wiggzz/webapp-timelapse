@@ -13,8 +13,6 @@ before_install:
       sudo update-alternatives --config g++;
     fi
   - git clone --depth=1 https://github.com/nodegit/nodegit ./.nodegit
-  - cd ./.nodegit
-  - BUILD_ONLY=true npm install 
-  - cd ..
+  - BUILD_ONLY=true npm install ./.nodegit
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
