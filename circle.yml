@@ -3,4 +3,4 @@ machine:
     version: 0.12.0
 dependencies:
   pre:
-    - bash scripts/installNodeGit.sh
+    - sudo bash scripts/installNodeGit.sh
