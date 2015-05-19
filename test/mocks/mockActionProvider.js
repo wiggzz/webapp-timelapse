@@ -1,3 +1,5 @@
+'use strict';
+
 
 var mockActionProvider = function(actionMap, doneAction) {
   var self = {};

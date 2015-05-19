@@ -1,3 +1,6 @@
+'use strict';
+
+global.Promise = global.Promise || require('lie');
 var chai = require('chai')
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);

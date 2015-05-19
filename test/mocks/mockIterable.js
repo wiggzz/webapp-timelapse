@@ -1,3 +1,5 @@
+'use strict';
+
 var mockIterable = function(list) {
   var self = {}
 
